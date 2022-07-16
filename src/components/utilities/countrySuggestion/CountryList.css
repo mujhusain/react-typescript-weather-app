@@ -1,0 +1,20 @@
+ul {
+  list-style: none;
+}
+.country-name {
+  display: flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 3px;
+  font-size: 1rem;
+  background-color: rgb(12, 168, 72);
+  margin-top: 2px;
+  color: white;
+  cursor: pointer;
+}
+.suggestion-div {
+  width: 19%;
+  position: relative;
+  left: 35%;
+  bottom: -11vh;
+}
