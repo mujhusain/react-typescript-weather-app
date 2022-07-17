@@ -1,7 +1,7 @@
 // An array containing all the country names in the world
 
-import React, { useState,useEffect,Dispatch, SetStateAction } from "react";
-import './CountryList.css';
+import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
+import "./CountryList.css";
 
 const arr = [
   "Afghanistan",
@@ -228,38 +228,45 @@ const arr = [
   "Zimbabwe",
 ];
 
-type state={
-  text:string
-  setCountryName: Dispatch<SetStateAction<string>>
-}
+type state = {
+  text: string;
+  setCountryName: Dispatch<SetStateAction<string>>;
+};
 
-const CountryList=({text,setCountryName}:state)=> {
+const CountryList = ({ text, setCountryName }: state) => {
   const [list, setList] = useState<string[]>();
 
   useEffect(() => {
     let newList = [];
     for (let i = 0; i < arr.length; i++) {
-      if (text && arr[i].substring(0, text.length).toUpperCase().toLocaleLowerCase()== text.toLocaleLowerCase()) {
+      if (
+        text &&
+        arr[i].substring(0, text.length).toUpperCase().toLocaleLowerCase() ==
+          text.toLocaleLowerCase()
+      ) {
         newList.push(arr[i]);
       }
       setList(newList);
     }
-  }, [text])
-  
+  }, [text]);
 
   return (
-    <div className='suggestion-div'>
+    <div className="suggestion-div">
       <ul className="list-group">
         {list?.map((country, index) => {
           return (
-            <div onClick={()=>setCountryName(country)} className='country-name' key={index}>
-              <li >{country}</li>
+            <div
+              onClick={() => setCountryName(country)}
+              className="country-name"
+              key={index}
+            >
+              <li>{country}</li>
             </div>
           );
         })}
       </ul>
     </div>
   );
-}
+};
 
 export default CountryList;
