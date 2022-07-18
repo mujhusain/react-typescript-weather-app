@@ -3,7 +3,7 @@ type state={
 }
 const Warning=({found}:state)=> {
   return (
-    <div>{!found ? <h2 style={{ color: "red" }}>Country Not Found</h2> : null}</div>
+    <div >{!found ? <h2  style={{ color: "red" }} data-testid="warning-message" >Country Not Found</h2> : null}</div>
   )
 }
 

@@ -20,7 +20,7 @@ export const CountryData = ({
   children,
 }: CountryDataType) => {
   return (
-    <Card sx={{ minWidth: 300, minHeight: 300 }} elevation={3}>
+    <Card sx={{ minWidth: 300, minHeight: 300 }} data-testid="countrycard-test" elevation={3}>
       <CardMedia component="img" height="140" image={flag} alt={name} />
       <CardContent>
         <Typography
