@@ -12,8 +12,13 @@ function Card({ name, capital, population, latlng, flag }: CountryDataType) {
     useState<WeatherStateType>(initialState);
 
   async function showWeatherData() {
-    let { data } = await getWeatherData(capital);
-    setWeatherData(data);
+    try{
+      let { data } = await getWeatherData(capital);
+      setWeatherData(data);
+    }catch(err){
+      console.log(err)
+
+    }
   }
 
   const handleClick = () => {
@@ -36,14 +41,14 @@ function Card({ name, capital, population, latlng, flag }: CountryDataType) {
         </CountryData>
 
         <WeatherData
-          cityName={capital}
-          temp={weatherData?.current.temperature}
-          time={weatherData?.current.observation_time}
-          weather_desc={weatherData?.current.weather_descriptions[0]}
-          wind_speed={weatherData?.current.wind_speed}
-          precip={weatherData?.current.precip}
-          icon={weatherData.current.weather_icons[0]}
-          humidity={weatherData?.current.humidity}
+          cityName={capital || "API Call Exeeded"}
+          temp={weatherData?.current?.temperature || 0}
+          time={weatherData?.current?.observation_time || "API Call Exeeded"}
+          weather_desc={weatherData?.current?.weather_descriptions[0] || "API Call Exeeded"}
+          wind_speed={weatherData?.current?.wind_speed || 0}
+          precip={weatherData?.current?.precip || 0}
+          icon={weatherData.current?.weather_icons[0] || "API Call Exeeded"}
+          humidity={weatherData?.current?.humidity || 0}
         >
           <Button
             variant="outlined" color="primary"

@@ -6,7 +6,9 @@ import Warning from "../warning/Warning";
 import './input.css';
 import CountryList from "../countrySuggestion/CountryList";
 
-function Input() {
+// type state 
+
+const Input:React.FC<{jestFunc?:Function}>=({jestFunc})=> {
   const navigate = useNavigate();
   const [countryName, setCountryName] = useState("");
   const [found, setFound] = useState(true);
@@ -17,11 +19,12 @@ function Input() {
     // if (e.key === "Enter" || e.key === "NumpadEnter") {
     //   handleSearch();
     // } else {
-    setCountryName(e.currentTarget.value);
+    setCountryName(e.currentTarget.value.trim());
     // }
   };
 
   const handleSearch = async () => {
+    jestFunc && jestFunc("test"); //testing purpose
     try {
       let { data } = await getCountryDetails(countryName);
       setFound(true);

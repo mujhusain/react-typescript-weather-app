@@ -21,9 +21,7 @@ export const WeatherData = ({
   time,
   weather_desc,
   wind_speed,
-  precip,
   icon,
-  humidity,
   children,
 }: WeatherDataType) => {
   return (

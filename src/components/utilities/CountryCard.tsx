@@ -38,7 +38,7 @@ export const CountryData = ({
           Population: {population}
         </Typography>
         <Typography variant="body2" component="h6" color="text.secondary">
-          LatLong: {latlng.join(', ')}
+          LatLong: {latlng?.join(', ')}
         </Typography>
       </CardContent>
       {children}
