@@ -47,7 +47,7 @@ function Card({ name, capital, population, latlng, flag }: CountryDataType) {
           weather_desc={weatherData?.current?.weather_descriptions[0] || "API Call Exeeded"}
           wind_speed={weatherData?.current?.wind_speed || 0}
           precip={weatherData?.current?.precip || 0}
-          icon={weatherData.current?.weather_icons[0] || "API Call Exeeded"}
+          icon={weatherData.current?.weather_icons[0] || "https://cms.jotform.com/uploads/answers/answer/TattooRemoval/1596935_API-Limit%20Exceeded.jpeg"}
           humidity={weatherData?.current?.humidity || 0}
         >
           <Button
