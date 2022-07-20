@@ -251,11 +251,12 @@ const CountryList = ({ text, setCountryName }: state) => {
   }, [text]);
 
   return (
-    <div className="suggestion-div">
-      <ul className="list-group">
+    <div className="suggestion-div" >
+      <ul className="list-group" data-testid="suggestion">
         {list?.map((country, index) => {
           return (
             <div
+            data-testid="suggestion-items"
               onClick={() => setCountryName(country)}
               className="country-name"
               key={index}
